@@ -2,7 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import SkillPill from '../components/SkillPill.astro';
 import { projects } from '../data/projects';
+import { skillGroups } from '../data/skills';
+import { experiences } from '../data/experience';
+import { education } from '../data/education';
 
 const lang = 'ar' as const;
 ---
@@ -53,26 +57,16 @@ const lang = 'ar' as const;
 
 		<section class="mt-12">
 			<h2 class="text-xl font-bold text-zinc-50">المهارات</h2>
-			<div class="mt-4 flex flex-wrap gap-2">
-				{[
-					'HTML',
-					'CSS',
-					'Django',
-					'Python',
-					'TypeScript',
-					'JavaScript',
-					'Astro',
-					'TailwindCSS',
-					'Photoshop',
-					'Bash Scripts',
-					'C++',
-					'SQLite',
-					'PostgreSQL',
-					'Git/GitHub',
-				].map((s) => (
-					<span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-300">
-						{s}
-					</span>
+			<div class="mt-5 grid gap-4">
+				{skillGroups.map((group) => (
+					<section class="rounded-2xl border border-white/10 bg-white/5 p-5">
+						<h3 class="text-sm font-semibold text-zinc-100">{group.title.ar}</h3>
+						<div class="mt-4 flex flex-wrap gap-2">
+							{group.skills.map((s) => (
+								<SkillPill label={s.label} icon={s.icon} />
+							))}
+						</div>
+					</section>
 				))}
 			</div>
 		</section>
@@ -87,6 +81,61 @@ const lang = 'ar' as const;
 			</div>
 		</section>
 
+		<section class="mt-16">
+			<h2 class="text-xl font-bold text-zinc-50">الخبرات</h2>
+			<div class="mt-5 grid gap-4">
+				{experiences.map((e) => (
+					<article class="rounded-2xl border border-white/10 bg-white/5 p-5">
+						<div class="flex items-start justify-between gap-4">
+							<div>
+								<h3 class="text-base font-semibold text-zinc-100">{e.title.ar}</h3>
+								<p class="mt-1 text-sm font-medium text-zinc-300">{e.company}</p>
+								<p class="mt-2 text-sm text-zinc-300">{e.summary.ar}</p>
+							</div>
+							<div class="text-right text-xs font-medium text-zinc-300">
+								<div>{e.start} — {e.end.ar}</div>
+								{e.location && <div class="mt-1 text-zinc-400">{e.location.ar}</div>}
+							</div>
+						</div>
+						{e.tags?.length ? (
+							<div class="mt-4 flex flex-wrap gap-2">
+								{e.tags.map((t) => (
+									<span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-300">{t}</span>
+								))}
+							</div>
+						) : null}
+					</article>
+				))}
+			</div>
+		</section>
+
+		<section class="mt-16">
+			<h2 class="text-xl font-bold text-zinc-50">التعليم</h2>
+			<div class="mt-5 grid gap-4">
+				{education.map((ed) => (
+					<article class="rounded-2xl border border-white/10 bg-white/5 p-5">
+						<div class="flex items-start justify-between gap-4">
+							<div>
+								<h3 class="text-base font-semibold text-zinc-100">{ed.school}</h3>
+								<p class="mt-1 text-sm font-medium text-zinc-300">{ed.degree.ar} · {ed.field.ar}</p>
+								<p class="mt-2 text-sm text-zinc-300">{ed.status.ar}</p>
+							</div>
+							<div class="text-right text-xs font-medium text-zinc-300">
+								{ed.start} — {ed.end}
+							</div>
+						</div>
+						{ed.tags?.length ? (
+							<div class="mt-4 flex flex-wrap gap-2">
+								{ed.tags.map((t) => (
+									<span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-300">{t}</span>
+								))}
+							</div>
+						) : null}
+					</article>
+				))}
+			</div>
+		</section>
+
 		<section id="contact" class="mt-16 rounded-2xl border border-white/10 bg-white/5 p-6">
 			<h2 class="text-xl font-bold text-zinc-50">تواصل</h2>
 			<p class="mt-3 text-sm leading-relaxed text-zinc-300">
@@ -97,23 +146,32 @@ const lang = 'ar' as const;
 					href="mailto:zelgohary44@gmail.com"
 					class="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-zinc-100 hover:bg-white/10"
 				>
-					Email
+					<span class="inline-flex items-center gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.99 5.7a2 2 0 0 1-2.02 0L2 7" /><rect width="20" height="16" x="2" y="4" rx="2" /></svg>
+						Email
+					</span>
 				</a>
 				<a
-					href="https://www.linkedin.com/in/"
+					href="https://www.linkedin.com/in/ziad-elgohary4/"
 					target="_blank"
 					rel="noreferrer"
 					class="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-zinc-100 hover:bg-white/10"
 				>
-					LinkedIn
+					<span class="inline-flex items-center gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6Z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>
+						LinkedIn
+					</span>
 				</a>
 				<a
-					href="https://wa.me/"
+					href="https://wa.me/201028335151"
 					target="_blank"
 					rel="noreferrer"
 					class="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-zinc-100 hover:bg-white/10"
 				>
-					WhatsApp
+					<span class="inline-flex items-center gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.7 7.4L3 21l1.6-5.3A8.5 8.5 0 1 1 21 12Z" /><path d="M8.5 10.5c.2 1 .8 2 1.6 2.8.8.8 1.8 1.4 2.8 1.6.4.1.8 0 1.1-.2l1.2-.7c.3-.2.7-.1.9.2l.9 1.3c.2.3.1.7-.1.9l-1 1c-.3.3-.7.4-1.1.4-2.2 0-4.9-1.7-6.7-3.5S6.2 11.9 6.2 9.7c0-.4.1-.8.4-1.1l1-1c.2-.2.6-.3.9-.1l1.3.9c.3.2.4.6.2.9l-.7 1.2c-.2.3-.3.7-.2 1.1Z" /></svg>
+						WhatsApp
+					</span>
 				</a>
 			</div>
 		</section>
