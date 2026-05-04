@@ -35,6 +35,14 @@ function inferRole(tags: string[]) {
 		};
 	}
 
+	const hasCpp = t.some((x) => x.includes('c++') || x === 'cpp' || x.includes('cpp'));
+	if (hasCpp) {
+		return {
+			ar: 'Backend Developer',
+			en: 'Backend Developer',
+		};
+	}
+
 	const hasFront = t.some((x) => ['html', 'css', 'bootstrap', 'tailwind', 'tailwindcss', 'astro', 'react', 'next', 'ui', 'template', 'web', 'frontend'].some((k) => x.includes(k)));
 	const hasBack = t.some((x) => ['django', 'python', 'backend', 'api', 'multi-tenant', 'postgres', 'postgresql', 'sqlite', 'database'].some((k) => x.includes(k)));
 
