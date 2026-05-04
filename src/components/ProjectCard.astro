@@ -38,7 +38,7 @@ const isPrivate = project.visibility === 'private';
   </div>
 
   <div class="mt-5 flex flex-wrap gap-3">
-    {project.repoUrl && (
+    {!isPrivate && project.repoUrl && (
       <a
         href={project.repoUrl}
         class="text-sm font-semibold text-indigo-200 hover:text-indigo-100"
@@ -48,7 +48,7 @@ const isPrivate = project.visibility === 'private';
         {lang === 'ar' ? 'رابط الريبو' : 'Repo'}
       </a>
     )}
-    {project.demoUrl && (
+    {!isPrivate && project.demoUrl && (
       <a
         href={project.demoUrl}
         class="text-sm font-semibold text-indigo-200 hover:text-indigo-100"
