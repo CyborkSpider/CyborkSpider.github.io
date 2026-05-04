@@ -1,27 +1,18 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Navbar from '../../components/Navbar.astro';
-import ProjectCard from '../../components/ProjectCard.astro';
-import { projects } from '../../data/projects';
-
-const lang = 'ar' as const;
+const lang = 'en' as const;
 ---
 
-<Layout lang={lang} title="Ziad Elgohary | Projects">
-  <Navbar lang={lang} />
-  <main class="mx-auto w-full max-w-5xl px-4 py-12">
-    <header class="flex flex-col gap-3">
-      <div class="inline-flex w-fit rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-zinc-100">
-        My Projects
-      </div>
-      <h1 class="text-3xl font-bold tracking-tight text-zinc-50 md:text-4xl">شوف أحدث شغلي</h1>
-      <p class="max-w-3xl text-sm leading-relaxed text-zinc-300">
-        هنا هتلاقي كل المشاريع اللي اشتغلت عليها. المشاريع الخاصة بتظهر كـ Case Study بدون كشف الكود.
-      </p>
-    </header>
-
-    <section class="mt-8 grid gap-4 md:grid-cols-2">
-      {projects.map((p) => <ProjectCard project={p} lang={lang} />)}
-    </section>
-  </main>
-</Layout>
+<html lang={lang}>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="refresh" content="0; url=/en/projects/" />
+		<link rel="canonical" href="/en/projects/" />
+		<title>Ziad Elgohary | Projects</title>
+	</head>
+	<body>
+		<script>
+			window.location.replace('/en/projects/');
+		</script>
+	</body>
+</html>
