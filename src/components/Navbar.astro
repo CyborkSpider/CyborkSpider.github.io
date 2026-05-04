@@ -1,0 +1,34 @@
+---
+const { lang } = Astro.props as { lang: 'ar' | 'en' };
+const isAr = lang === 'ar';
+const t = {
+  name: 'Ziad Elgohary',
+  home: isAr ? 'الرئيسية' : 'Home',
+  projects: isAr ? 'المشاريع' : 'Projects',
+  contact: isAr ? 'تواصل' : 'Contact',
+  switchTo: isAr ? 'EN' : 'AR',
+};
+const homeHref = isAr ? '/' : '/en/';
+const projectsHref = isAr ? '/projects/' : '/en/projects/';
+const contactHref = isAr ? '/#contact' : '/en/#contact';
+const switchHref = isAr ? '/en/' : '/';
+---
+
+<header class="sticky top-0 z-50 border-b border-white/10 bg-bg-950/60 backdrop-blur">
+  <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+    <a href={homeHref} class="text-sm font-semibold tracking-wide text-zinc-100">
+      {t.name}
+    </a>
+
+    <nav class="flex items-center gap-4 text-sm text-zinc-300">
+      <a class="hover:text-zinc-100" href={homeHref}>{t.home}</a>
+      <a class="hover:text-zinc-100" href={projectsHref}>{t.projects}</a>
+      <a class="hover:text-zinc-100" href={contactHref}>{t.contact}</a>
+      <a
+        class="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold text-zinc-100 hover:bg-white/10"
+        href={switchHref}
+        >{t.switchTo}</a
+      >
+    </nav>
+  </div>
+</header>

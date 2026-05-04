@@ -1,0 +1,62 @@
+---
+import type { Project } from '../data/projects';
+
+const {
+  project,
+  lang,
+} = Astro.props as {
+  project: Project;
+  lang: 'ar' | 'en';
+};
+
+const title = project.title[lang];
+const description = project.description[lang];
+const isPrivate = project.visibility === 'private';
+---
+
+<article class="group rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:bg-white/7">
+  <div class="flex items-start justify-between gap-4">
+    <div>
+      <h3 class="text-base font-semibold text-zinc-100">{title}</h3>
+      <p class="mt-2 text-sm leading-relaxed text-zinc-300">{description}</p>
+    </div>
+
+    <span
+      class:list={[
+        'shrink-0 rounded-full px-3 py-1 text-xs font-semibold',
+        isPrivate ? 'border border-amber-400/25 bg-amber-400/10 text-amber-200' : 'border border-emerald-400/25 bg-emerald-400/10 text-emerald-200',
+      ]}
+    >
+      {isPrivate ? (lang === 'ar' ? 'خاص' : 'Private') : (lang === 'ar' ? 'عام' : 'Public')}
+    </span>
+  </div>
+
+  <div class="mt-4 flex flex-wrap gap-2">
+    {project.tags.map((tag) => (
+      <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-300">{tag}</span>
+    ))}
+  </div>
+
+  <div class="mt-5 flex flex-wrap gap-3">
+    {project.repoUrl && (
+      <a
+        href={project.repoUrl}
+        class="text-sm font-semibold text-indigo-200 hover:text-indigo-100"
+        target="_blank"
+        rel="noreferrer"
+      >
+        {lang === 'ar' ? 'رابط الريبو' : 'Repo'}
+      </a>
+    )}
+    {project.demoUrl && (
+      <a
+        href={project.demoUrl}
+        class="text-sm font-semibold text-indigo-200 hover:text-indigo-100"
+        target="_blank"
+        rel="noreferrer"
+      >
+        {lang === 'ar' ? 'عرض مباشر' : 'Demo'}
+      </a>
+    )}
+  </div>
+</article>
