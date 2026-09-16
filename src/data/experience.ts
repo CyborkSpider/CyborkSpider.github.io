@@ -30,33 +30,33 @@ export type ExperienceItem = {
 
 export const experiences: ExperienceItem[] = [
   {
-    company: 'YLY - Ministry of Youth and Sports',
+    company: 'Odoo (EMEA)',
     title: {
-      ar: 'Planner',
-      en: 'Planner',
+      ar: 'Odoo Developer Intern',
+      en: 'Odoo Developer Intern',
     },
     employmentType: {
-      ar: 'دوام جزئي',
-      en: 'Part-time',
+      ar: 'تدريب',
+      en: 'Internship',
     },
-    start: 'Jul 2025',
+    start: 'Aug 2026',
     end: {
-      ar: 'حتى الآن',
-      en: 'Present',
+      ar: 'Sep 2026',
+      en: 'Sep 2026',
     },
     location: {
-      ar: 'الغربية، مصر',
-      en: 'Al Gharbiyah, Egypt',
+      ar: 'عن بُعد',
+      en: 'Remote',
     },
     workMode: {
-      ar: 'هجين',
-      en: 'Hybrid',
+      ar: 'عن بُعد',
+      en: 'Remote',
     },
     summary: {
-      ar: 'Youth Leading Youth',
-      en: 'Youth Leading Youth',
+      ar: 'اكتسبت خبرة عملية في تطوير Odoo ERP، وتخصيص الوحدات وأتمتة العمليات التجارية باستخدام Python.',
+      en: 'Gained hands-on experience in Odoo ERP development, module customization, and business process automation using Python.',
     },
-    tags: ['Teamwork', 'Communication'],
+    tags: ['Odoo', 'Python', 'ERP', 'Module Development'],
   },
   {
     company: 'Self-Employed',
@@ -88,10 +88,39 @@ export const experiences: ExperienceItem[] = [
     tags: ['Teaching', 'Mentoring'],
   },
   {
+    company: 'YLY - Ministry of Youth and Sports',
+    title: {
+      ar: 'Planner',
+      en: 'Planner',
+    },
+    employmentType: {
+      ar: 'دوام جزئي',
+      en: 'Part-time',
+    },
+    start: 'Jul 2025',
+    end: {
+      ar: 'Jul 2026',
+      en: 'Jul 2026',
+    },
+    location: {
+      ar: 'الغربية، مصر',
+      en: 'Al Gharbiyah, Egypt',
+    },
+    workMode: {
+      ar: 'هجين',
+      en: 'Hybrid',
+    },
+    summary: {
+      ar: 'تخطيط وتنسيق المبادرات الشبابية في إطار برنامج Youth Leading Youth.',
+      en: 'Planned and coordinated youth initiatives and events within the Youth Leading Youth program.',
+    },
+    tags: ['Teamwork', 'Communication', 'Project Planning'],
+  },
+  {
     company: 'Outlier',
     title: {
-      ar: 'Programmer',
-      en: 'Programmer',
+      ar: 'Python Programmer',
+      en: 'Python Programmer',
     },
     employmentType: {
       ar: 'دوام جزئي',
@@ -106,10 +135,14 @@ export const experiences: ExperienceItem[] = [
       ar: 'عن بُعد',
       en: 'Remote',
     },
-    summary: {
-      ar: 'تحسين استجابات الذكاء الاصطناعي في بايثون لزيادة الدقة وحل المشكلات.',
-      en: 'Enhanced AI responses in Python to improve accuracy and troubleshooting.',
+    workMode: {
+      ar: 'عن بُعد',
+      en: 'Remote',
     },
-    tags: ['Python', 'Troubleshooting'],
+    summary: {
+      ar: 'تحسين استجابات نماذج الذكاء الاصطناعي في Python لزيادة الدقة والجودة وحل المشكلات البرمجية.',
+      en: 'Enhanced AI model responses in Python to improve output accuracy, logic, and code quality.',
+    },
+    tags: ['Python', 'AI Training', 'Troubleshooting'],
   },
 ];

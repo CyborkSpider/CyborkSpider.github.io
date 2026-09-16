@@ -39,6 +39,9 @@ export const skillGroups: SkillGroup[] = [
     skills: [
       { label: 'Python', icon: 'python' },
       { label: 'Django', icon: 'django' },
+      { label: 'FastAPI', icon: 'fastapi' },
+      { label: 'RESTful APIs', icon: 'api' },
+      { label: 'Odoo ERP', icon: 'odoo' },
       { label: 'Bash Scripts', icon: 'bash' },
       { label: 'C++', icon: 'cpp' },
     ],
@@ -52,6 +55,7 @@ export const skillGroups: SkillGroup[] = [
     skills: [
       { label: 'SQLite', icon: 'sqlite' },
       { label: 'PostgreSQL', icon: 'postgres' },
+      { label: 'Neo4j', icon: 'neo4j' },
     ],
   },
   {
@@ -60,6 +64,11 @@ export const skillGroups: SkillGroup[] = [
       ar: 'أدوات',
       en: 'Tools',
     },
-    skills: [{ label: 'Git/GitHub', icon: 'git' }],
+    skills: [
+      { label: 'Git/GitHub', icon: 'git' },
+      { label: 'Linux/Kali', icon: 'linux' },
+      { label: 'Penetration Testing', icon: 'security' },
+      { label: 'Cloudflare Tunnels', icon: 'cloudflare' },
+    ],
   },
 ];

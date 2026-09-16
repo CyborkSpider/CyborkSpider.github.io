@@ -17,16 +17,30 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: 'jarvis',
+    title: {
+      ar: 'J.A.R.V.I.S.',
+      en: 'J.A.R.V.I.S.',
+    },
+    description: {
+      ar: 'نظام ذكاء اصطناعي متعدد الوكلاء يعمل محلياً، مبني على رسم بياني للمعرفة يدمج Neo4j وPostgreSQL للاستعلام الذكي عن البيانات وتحليلها.',
+      en: 'Local multi-agent AI system built on a knowledge graph integrating Neo4j and PostgreSQL for intelligent data querying and analysis.',
+    },
+    tags: ['Python', 'Neo4j', 'PostgreSQL', 'AI', 'Multi-agent'],
+    year: '2026',
+    visibility: 'private',
+  },
+  {
     slug: 'investech-development',
     title: {
       ar: 'Investech Development',
       en: 'Investech Development',
     },
     description: {
-      ar: 'مشروع قيد التطوير. سيتم إضافة تفاصيل أكثر قريبًا.',
-      en: 'Project under active development. More details coming soon.',
+      ar: 'منصة استثمارية قيد التطوير النشط. تفاصيل إضافية قريبًا.',
+      en: 'Investment platform under active development. More details coming soon.',
     },
-    tags: ['Under Development'],
+    tags: ['Django', 'Python', 'Under Development'],
     visibility: 'private',
   },
   {
@@ -36,10 +50,10 @@ export const projects: Project[] = [
       en: 'Attendance System',
     },
     description: {
-      ar: 'نظام حضور/إدارة متعدد المستأجرين (Multi-tenant). سيتم إضافة تفاصيل أكثر قريبًا.',
-      en: 'Multi-tenant attendance/management system. More details coming soon.',
+      ar: 'تطبيق ويب متعدد المستأجرين (Multi-tenant) لإدارة الحضور والغياب، بعزل كامل للبيانات وتوجيه ديناميكي لقواعد البيانات.',
+      en: 'Multi-tenant web application for attendance management with robust data isolation and dynamic database routing.',
     },
-    tags: ['Django', 'Multi-tenant'],
+    tags: ['Django', 'Multi-tenant', 'PostgreSQL'],
     visibility: 'private',
   },
   {
@@ -147,10 +161,10 @@ export const projects: Project[] = [
       en: 'Stealth Attack',
     },
     description: {
-      ar: 'مشروع مرتبط بأدوات/سكربتات (Stealth Attack).',
-      en: 'A project related to tools/scripts (Stealth Attack).',
+      ar: 'مشروع مرتبط بأدوات/سكربتات اختبار الاختراق.',
+      en: 'A penetration testing tools/scripts project.',
     },
-    tags: ['Tools'],
+    tags: ['Tools', 'Pentesting', 'Kali Linux'],
     visibility: 'public',
     repoUrl: 'https://github.com/CyborkSpider/Stealth_Attack',
   },
@@ -161,10 +175,10 @@ export const projects: Project[] = [
       en: 'Stealth Auto',
     },
     description: {
-      ar: 'مشروع مرتبط بالأتمتة/الأدوات (Stealth Auto).',
-      en: 'A project related to automation/tools (Stealth Auto).',
+      ar: 'أداة أتمتة مرتبطة بأدوات اختبار الاختراق.',
+      en: 'An automation tool related to penetration testing.',
     },
-    tags: ['Tools', 'Automation'],
+    tags: ['Tools', 'Automation', 'Python'],
     visibility: 'public',
     repoUrl: 'https://github.com/CyborkSpider/Stealth_Auto',
   },
@@ -175,10 +189,10 @@ export const projects: Project[] = [
       en: 'Anonymus Kali',
     },
     description: {
-      ar: 'مشروع/محتوى متعلق بـ Kali Linux.',
-      en: 'A project/content related to Kali Linux.',
+      ar: 'مشروع/محتوى متعلق بـ Kali Linux وأدوات الأمن.',
+      en: 'A project/content related to Kali Linux and security tools.',
     },
-    tags: ['Linux', 'Kali'],
+    tags: ['Linux', 'Kali', 'Security'],
     visibility: 'public',
     repoUrl: 'https://github.com/CyborkSpider/Anonymus_Kali',
   },
