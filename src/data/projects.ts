@@ -35,6 +35,44 @@ export const projects: Project[] = [
     year: '2026',
     visibility: 'private',
     image: '/projects/jarvis.png',
+    readme: {
+      ar: `<h3>نظرة عامة</h3>
+<p><strong>جارفيس (J.A.R.V.I.S)</strong> هو مساعد ذكاء اصطناعي محلي متطور مستوحى من واجهة "آيرون مان". تم تصميمه ليعمل كنظام تشغيل شخصي ذكي، يدمج بين الذاكرة طويلة المدى، والتفكير المنطقي، والتفاعل الصوتي، وتحليل الصور والفيديوهات، وكل ذلك يعمل محلياً بالكامل على جهازك للحفاظ على خصوصيتك.</p>
+<h3>أهم المميزات</h3>
+<ul class="list-disc list-inside space-y-1">
+<li><strong>واجهة مستقبلية (Iron Man HUD):</strong> واجهة مستخدم مذهلة تضم "القلب التفاعلي" (Orb)، تأثيرات بصرية، ونافذة تيرمينال حية لمتابعة العمليات.</li>
+<li><strong>نماذج ذكاء اصطناعي محلية:</strong> مدعوم بـ Ollama (مثل qwen2.5 للمحادثات و qwen3:1.7b للتفكير). خصوصية 100% بدون الاعتماد على سيرفرات خارجية.</li>
+<li><strong>المحادثة الصوتية الحية (Live Talk):</strong> تحدث مع جارفيس بصوتك وسيرد عليك بصوته! يستخدم Whisper لتحويل الصوت لنص و Edge-TTS لنطق النصوص ببراعة.</li>
+<li><strong>تحليل الرؤية والفيديو:</strong> يمكنك رفع صور أو فيديوهات في الشات! النظام يقوم باستخراج اللقطات والصوت من الفيديو، ويقرأ محتواه باستخدام نموذج moondream المخصص للرؤية.</li>
+<li><strong>ذاكرة معرفية متطورة (Graph Memory):</strong> يستخدم Neo4j كقاعدة بيانات شبكية (Graph DB) لربط المعلومات واستنتاج العلاقات وتذكر التفاصيل على المدى الطويل (GraphRAG).</li>
+<li><strong>ذاكرة العلاقات:</strong> يستخدم PostgreSQL لحفظ سجلات المحادثات واسترجاع المعلومات بناءً على التشابه المعنوي.</li>
+<li><strong>تعدد الوكلاء (Multi-Agent):</strong> يمتلك النظام عقولاً متعددة، فهناك عقل للمحادثة، وعقل للتفكير العميق، وعقل لكتابة الأكواد البرمجية.</li>
+</ul>
+<h3>الهيكلية والتصميم</h3>
+<ul class="list-disc list-inside space-y-1">
+<li>الخلفية (Backend): مبني باستخدام FastAPI و Python.</li>
+<li>الواجهة (Frontend): Vanilla HTML/JS/CSS (بدون إطارات عمل لأداء فائق).</li>
+<li>قواعد البيانات: Neo4j (Graph), PostgreSQL (Vectors & Meta), ChromaDB.</li>
+</ul>`,
+      en: `<h3>Overview</h3>
+<p><strong>J.A.R.V.I.S</strong> is a highly advanced, locally-hosted AI assistant inspired by Iron Man's HUD. It is designed to act as your personal AI OS, integrating multiple intelligent modules to handle memory, reasoning, voice interaction, and multimedia analysis, entirely locally.</p>
+<h3>Key Features</h3>
+<ul class="list-disc list-inside space-y-1">
+<li><strong>Iron Man HUD UI:</strong> A spectacular, futuristic frontend featuring an interactive orb, animated particles, real-time gauges, and live terminal logging.</li>
+<li><strong>Local LLM Integration:</strong> Powered by Ollama (qwen2.5 for chat, qwen3:1.7b for reasoning). 100% private and runs on your hardware.</li>
+<li><strong>Live Talk Mode (Voice):</strong> Seamless voice-to-voice interaction. Uses Whisper for fast STT (Speech-to-Text) and Edge-TTS for natural-sounding text-to-speech.</li>
+<li><strong>Vision & Video Analysis:</strong> Upload images or videos directly to the chat! Uses ffmpeg to extract video frames and audio, transcribing the audio and analyzing the visual frames using the moondream vision model.</li>
+<li><strong>Advanced Graph Memory:</strong> Integrates Neo4j for a persistent Knowledge Graph, mapping entities, relationships, and context over long-term conversations (GraphRAG).</li>
+<li><strong>Relational Memory Engine:</strong> Uses PostgreSQL + pgvector to store short-term and semantic memory embeddings.</li>
+<li><strong>Multi-Agent Architecture:</strong> Includes specific roles like chat, brain, and coder, dynamically routed based on the task.</li>
+</ul>
+<h3>Architecture</h3>
+<ul class="list-disc list-inside space-y-1">
+<li>Backend: FastAPI (Python)</li>
+<li>Frontend: Vanilla HTML/JS/CSS (No frameworks, pure performance)</li>
+<li>Databases: Neo4j (Graph), PostgreSQL (Vectors & Meta), ChromaDB (Vector store fallback)</li>
+</ul>`
+    }
   },
   {
     slug: 'attendance-system',
@@ -50,6 +88,32 @@ export const projects: Project[] = [
     year: '2025',
     visibility: 'private',
     image: '/projects/attendance_system.png',
+    readme: {
+      ar: `<h3>نظرة عامة</h3>
+<p>نظام ويب متكامل لإدارة الموارد البشرية والمخزون والمحاسبة، مبني بإطار Django مع دعم ثنائي اللغة (عربي/إنجليزي) وواجهة متجاوبة للمحمول وسطح المكتب.</p>
+<h3>المميزات الرئيسية</h3>
+<ul class="list-disc list-inside space-y-1">
+<li><strong>نظام الحضور والانصراف:</strong> تسجيل الحضور بالرقم، التحقق من الموقع الجغرافي (GPS)، تحديد نطاق الموقع وعناوين IP المسموح بها لكل فرع.</li>
+<li><strong>إدارة المستخدمين والفروع:</strong> إدارة شاملة للموظفين والفروع بصلاحيات ونطاقات جغرافية منفصلة.</li>
+<li><strong>نظام الرواتب المتقدم:</strong> حساب تلقائي للرواتب بناءً على سجلات الحضور، إدارة الساعات الإضافية، الخصومات والإضافات وإصدار كشوف الرواتب.</li>
+<li><strong>نظام المخزون والمشتريات والمبيعات:</strong> إدارة المنتجات، أوامر الشراء والبيع، جرد المخزون، ومرتجعات البيع والشراء.</li>
+<li><strong>نظام المحاسبة:</strong> تسجيل المبيعات والمصاريف، الضرائب، أهداف المستخدمين، وإدارة فواتير و صندوق العمليات (Cashbox).</li>
+<li><strong>إدارة الأجهزة والأمان:</strong> تسجيل أجهزة معتمدة (Device Tokens)، تتبع سجلات الوصول، وسجلات التدقيق للتعديلات.</li>
+<li><strong>الميزات الإضافية:</strong> نظام المساعد الذكي (AI Chat)، قاعدة بيانات المعرفة، تتبع المشاكل، ودعم كامل لتعدد المستأجرين (Multi-tenancy) لخدمة عملاء متعددين في نفس النظام.</li>
+</ul>`,
+      en: `<h3>Overview</h3>
+<p>A comprehensive HR, Inventory, and Accounting web system built with Django, featuring bilingual support (English/Arabic) and a responsive design for mobile and desktop.</p>
+<h3>Key Features</h3>
+<ul class="list-disc list-inside space-y-1">
+<li><strong>Attendance & Time Tracking:</strong> ID-based check-ins, GPS location verification, and IP address validation per branch.</li>
+<li><strong>User & Branch Management:</strong> Comprehensive management of employees and branches with separate permissions and geographical scopes.</li>
+<li><strong>Advanced Payroll System:</strong> Automated payroll calculation based on attendance records, handling overtime, deductions, bonuses, and payslip generation.</li>
+<li><strong>Inventory, Purchases, and Sales:</strong> Product management, purchase/sales orders, inventory tracking, and return processing.</li>
+<li><strong>Accounting System:</strong> Sales and expense tracking, tax management, user goals, and full cashbox management.</li>
+<li><strong>Device Management & Security:</strong> Device tokens for authorized access, extensive access logging, and audit trails for modifications.</li>
+<li><strong>Additional Features:</strong> AI Chat Assistant, Knowledge Base (FAQ), support issue tracking, and robust multi-tenancy to serve multiple clients on the same platform.</li>
+</ul>`
+    }
   },
   {
     slug: 'investech-development',

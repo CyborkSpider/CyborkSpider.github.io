@@ -1,0 +1,42 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import { projects } from '../../../data/projects';
+
+export function getStaticPaths() {
+  return projects.filter(p => p.readme).map((p) => ({
+    params: { slug: p.slug },
+    props: { project: p },
+  }));
+}
+
+const { project } = Astro.props;
+const lang = 'en' as const;
+---
+
+<Layout lang={lang} title={`Ziad Elgohary | ${project.title[lang]}`}>
+  <Navbar lang={lang} />
+  <main class="mx-auto w-full max-w-4xl px-4 py-12">
+    <div class="mb-8">
+      <a href={`/${lang}/`} class="text-sm font-medium text-indigo-400 hover:text-indigo-300">
+        &larr; Back to Portfolio
+      </a>
+    </div>
+    
+    {project.image && (
+      <img src={project.image} alt={project.title[lang]} class="w-full rounded-2xl border border-white/10 object-cover mb-8 aspect-video" />
+    )}
+    
+    <h1 class="text-3xl font-bold tracking-tight text-zinc-50 md:text-4xl mb-4">{project.title[lang]}</h1>
+    
+    <div class="flex flex-wrap gap-2 mb-8">
+      {project.tags.map(tag => (
+        <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-300">{tag}</span>
+      ))}
+    </div>
+    
+    <div class="space-y-4 [&>h3]:text-xl [&>h3]:font-bold [&>h3]:text-zinc-100 [&>h3]:mt-8 [&>h3]:mb-4 [&>p]:text-zinc-300 [&>p]:text-sm [&>p]:leading-relaxed [&>ul]:mt-4 [&>ul]:list-disc [&>ul]:list-inside [&>ul]:space-y-2 [&>ul]:text-sm [&>ul]:text-zinc-300">
+      <div set:html={project.readme?.[lang]} />
+    </div>
+  </main>
+</Layout>

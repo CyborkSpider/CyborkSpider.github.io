@@ -22,18 +22,17 @@ export const education: EducationItem[] = [
     school: 'Tanta University',
     degree: {
       ar: 'بكالوريوس',
-      en: "Bachelor's",
+      en: "B.Sc.",
     },
     field: {
-      ar: 'ذكاء اصطناعي وتحليل بيانات (FCI - BAI)',
-      en: 'AI & Data Analysis (FCI - BAI)',
+      ar: 'في الذكاء الاصطناعي وتحليل البيانات',
+      en: 'in Artificial Intelligence & Data Analysis',
     },
     start: 'Oct 2025',
     end: 'Jun 2029',
     status: {
-      ar: 'طالب (قيد الدراسة)',
-      en: 'Student (In progress)',
+      ar: 'المعدل التراكمي: 2.9',
+      en: 'Cumulative GPA: 2.9',
     },
-    tags: ['English', 'Programming'],
   },
 ];
