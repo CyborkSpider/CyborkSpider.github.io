@@ -13,6 +13,11 @@ export type Project = {
   visibility: 'public' | 'private';
   repoUrl?: string;
   demoUrl?: string;
+  image?: string; // path relative to /public, e.g. /projects/jarvis.png
+  readme?: {
+    ar: string;
+    en: string;
+  };
 };
 
 export const projects: Project[] = [
@@ -29,6 +34,22 @@ export const projects: Project[] = [
     tags: ['Python', 'Neo4j', 'PostgreSQL', 'AI', 'Multi-agent'],
     year: '2026',
     visibility: 'private',
+    image: '/projects/jarvis.png',
+  },
+  {
+    slug: 'attendance-system',
+    title: {
+      ar: 'CYBORK Management System',
+      en: 'CYBORK Management System',
+    },
+    description: {
+      ar: 'تطبيق ويب متعدد المستأجرين (Multi-tenant) لإدارة الحضور والغياب، بعزل كامل للبيانات وتوجيه ديناميكي لقواعد البيانات.',
+      en: 'Multi-tenant web application for attendance management with robust data isolation and dynamic database routing.',
+    },
+    tags: ['Django', 'Multi-tenant', 'PostgreSQL'],
+    year: '2025',
+    visibility: 'private',
+    image: '/projects/attendance_system.png',
   },
   {
     slug: 'investech-development',
@@ -44,16 +65,17 @@ export const projects: Project[] = [
     visibility: 'private',
   },
   {
-    slug: 'attendance-system',
+    slug: 'agency-management',
     title: {
-      ar: 'Attendance System',
-      en: 'Attendance System',
+      ar: 'Agency Management',
+      en: 'Agency Management',
     },
     description: {
-      ar: 'تطبيق ويب متعدد المستأجرين (Multi-tenant) لإدارة الحضور والغياب، بعزل كامل للبيانات وتوجيه ديناميكي لقواعد البيانات.',
-      en: 'Multi-tenant web application for attendance management with robust data isolation and dynamic database routing.',
+      ar: 'نظام إدارة وكالة متكامل يتيح إدارة العملاء والمشاريع والفرق. قيد التطوير.',
+      en: 'Full-featured agency management system for handling clients, projects, and teams. Under development.',
     },
-    tags: ['Django', 'Multi-tenant', 'PostgreSQL'],
+    tags: ['Python', 'Django', 'Management'],
+    year: '2026',
     visibility: 'private',
   },
   {

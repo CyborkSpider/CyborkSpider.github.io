@@ -68,13 +68,14 @@ const status = isPrivate ? (lang === 'ar' ? 'Published' : 'Published') : (lang =
 const role = inferRole(project.tags);
 const repoSlug = project.repoUrl ? getRepoSlug(project.repoUrl) : null;
 const ogImageUrl = !isPrivate && repoSlug ? `https://opengraph.githubassets.com/1/${repoSlug}` : null;
+const displayImage = project.image ?? ogImageUrl;
 ---
 
 <article class="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset] transition hover:bg-white/7">
-	{ogImageUrl && (
+	{displayImage && (
 		<div class="relative">
 			<img
-				src={ogImageUrl}
+				src={displayImage}
 				alt={title}
 				class="aspect-[16/9] w-full border-b border-white/10 object-cover"
 				loading="lazy"
@@ -94,7 +95,7 @@ const ogImageUrl = !isPrivate && repoSlug ? `https://opengraph.githubassets.com/
 				<p class="mt-3 text-sm leading-relaxed text-zinc-300">{description}</p>
 			</div>
 
-			{!ogImageUrl && (
+			{!displayImage && (
 				<span class:list={[
 					'shrink-0 rounded-full px-3 py-1 text-xs font-semibold',
 					isPrivate ? 'border border-emerald-400/25 bg-emerald-400/10 text-emerald-200' : 'border border-amber-400/25 bg-amber-400/10 text-amber-200',
