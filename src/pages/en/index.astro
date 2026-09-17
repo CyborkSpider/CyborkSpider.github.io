@@ -92,7 +92,14 @@ const lang = 'en' as const;
               <div>
                 <h3 class="text-base font-semibold text-zinc-100">{e.title.en}</h3>
                 <p class="mt-1 text-sm font-medium text-zinc-300">{e.company}</p>
-                <p class="mt-2 text-sm text-zinc-300">{e.summary.en}</p>
+                {e.summary && <p class="mt-2 text-sm text-zinc-300">{e.summary.en}</p>}
+                {e.bullets && e.bullets.length > 0 && (
+                  <ul class="mt-2 list-disc list-inside space-y-1">
+                    {e.bullets.map((b) => (
+                      <li class="text-sm text-zinc-300">{b.en}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
               <div class="text-right text-xs font-medium text-zinc-300">
                 <div>{e.start} — {e.end.en}</div>

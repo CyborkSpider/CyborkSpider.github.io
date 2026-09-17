@@ -21,10 +21,14 @@ export type ExperienceItem = {
     ar: string;
     en: string;
   };
-  summary: {
+  summary?: {
     ar: string;
     en: string;
   };
+  bullets?: {
+    ar: string;
+    en: string;
+  }[];
   tags?: string[];
 };
 
@@ -52,17 +56,23 @@ export const experiences: ExperienceItem[] = [
       ar: 'عن بُعد',
       en: 'Remote',
     },
-    summary: {
-      ar: 'اكتسبت خبرة عملية في تطوير Odoo ERP، وتخصيص الوحدات وأتمتة العمليات التجارية باستخدام Python.',
-      en: 'Gained hands-on experience in Odoo ERP development, module customization, and business process automation using Python.',
-    },
+    bullets: [
+      {
+        ar: 'اكتسبت خبرة عملية في تطوير Odoo ERP، وتخصيص سير العمل وتحسينه باستخدام Python.',
+        en: 'Gained hands-on experience in Odoo ERP development, customizing and optimizing business workflows using Python.',
+      },
+      {
+        ar: 'ساعدت في تطوير وصيانة وحدات Odoo، مما عزّز وظائف النظام وتجربة المستخدم.',
+        en: 'Assisted in developing and maintaining Odoo modules, enhancing system functionality and user experience.',
+      },
+    ],
     tags: ['Odoo', 'Python', 'ERP', 'Module Development'],
   },
   {
     company: 'Self-Employed',
     title: {
-      ar: 'Instructor',
-      en: 'Instructor',
+      ar: 'Programming Instructor',
+      en: 'Programming Instructor',
     },
     employmentType: {
       ar: 'دوام جزئي',
@@ -81,17 +91,19 @@ export const experiences: ExperienceItem[] = [
       ar: 'هجين',
       en: 'Hybrid',
     },
-    summary: {
-      ar: 'مدرب برمجة للـ Front-End و Back-End و Pentesting.',
-      en: 'Programming instructor for Front-End, Back-End and Pentesting.',
-    },
+    bullets: [
+      {
+        ar: 'تقديم تعليم شامل وإرشاد للطلاب في مجالات تطوير الواجهة الأمامية والخلفية واختبار الاختراق.',
+        en: 'Deliver comprehensive instruction and mentorship to students in Front-End development, Back-End development, and Penetration Testing.',
+      },
+    ],
     tags: ['Teaching', 'Mentoring'],
   },
   {
     company: 'YLY - Ministry of Youth and Sports',
     title: {
-      ar: 'Planner',
-      en: 'Planner',
+      ar: 'Planner (Volunteer)',
+      en: 'Planner (Volunteer)',
     },
     employmentType: {
       ar: 'دوام جزئي',
@@ -110,10 +122,12 @@ export const experiences: ExperienceItem[] = [
       ar: 'هجين',
       en: 'Hybrid',
     },
-    summary: {
-      ar: 'تخطيط وتنسيق المبادرات الشبابية في إطار برنامج Youth Leading Youth.',
-      en: 'Planned and coordinated youth initiatives and events within the Youth Leading Youth program.',
-    },
+    bullets: [
+      {
+        ar: 'خططت ونسّقت مبادرات وفعاليات شبابية، مع إثبات مهارات قوية في العمل الجماعي والتواصل متعدد الوظائف وتنظيم المشاريع.',
+        en: 'Planned and coordinated youth initiatives and events, demonstrating strong teamwork, cross-functional communication, and project organization.',
+      },
+    ],
     tags: ['Teamwork', 'Communication', 'Project Planning'],
   },
   {
@@ -139,10 +153,16 @@ export const experiences: ExperienceItem[] = [
       ar: 'عن بُعد',
       en: 'Remote',
     },
-    summary: {
-      ar: 'تحسين استجابات نماذج الذكاء الاصطناعي في Python لزيادة الدقة والجودة وحل المشكلات البرمجية.',
-      en: 'Enhanced AI model responses in Python to improve output accuracy, logic, and code quality.',
-    },
+    bullets: [
+      {
+        ar: 'حسّنت استجابات نماذج الذكاء الاصطناعي في Python لتحسين دقة المخرجات ومنطقها وجودتها.',
+        en: 'Enhanced AI model responses generated in the Python programming language to improve output accuracy, logic, and code quality.',
+      },
+      {
+        ar: 'رصدت وأصلحت أخطاء في مقاطع كود معقدة لضمان الأداء الأمثل والالتزام بمعايير تطوير البرمجيات.',
+        en: 'Troubleshot and debugged complex code snippets to ensure optimal performance and adherence to software development standards.',
+      },
+    ],
     tags: ['Python', 'AI Training', 'Troubleshooting'],
   },
 ];
